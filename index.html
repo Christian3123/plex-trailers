@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Trailers de las películas disponibles en mi Plex">
+  <title>Mis Películas | Plex Trailers</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">▶</span>
+      <div>
+        <strong>PLEX</strong>
+        <span>TRAILERS</span>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <input id="searchInput" class="search" type="search" placeholder="Buscar película...">
+      <button id="reloadButton" class="icon-button" title="Actualizar películas">↻</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">MI BIBLIOTECA PLEX</span>
+        <h1 id="heroTitle">Cargando películas...</h1>
+        <p id="heroSummary">Conectando con tu servidor Plex.</p>
+
+        <div class="hero-meta" id="heroMeta"></div>
+
+        <button id="heroTrailer" class="primary-button" disabled>
+          ▶ Ver tráiler
+        </button>
+      </div>
+      <div class="hero-gradient"></div>
+      <img id="heroBackdrop" class="hero-backdrop" alt="">
+    </section>
+
+    <section class="library-section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">CATÁLOGO</span>
+          <h2>Películas</h2>
+        </div>
+        <span id="movieCount" class="count">0 películas</span>
+      </div>
+
+      <div id="status" class="status">Cargando...</div>
+      <div id="movieGrid" class="movie-grid"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-card">
+      <button id="closeModal" class="close-button" aria-label="Cerrar">×</button>
+      <div class="modal-media">
+        <img id="modalPoster" alt="">
+      </div>
+      <div class="modal-info">
+        <span class="eyebrow">TRÁILER</span>
+        <h2 id="modalTitle">Película</h2>
+        <p id="modalDescription"></p>
+        <div id="trailerList" class="trailer-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
